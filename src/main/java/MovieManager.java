@@ -1,13 +1,13 @@
 public class MovieManager {
     private String[] movies = new String[0];
+    private int limit;
 
     public MovieManager() {
-
+        this.limit = 5;
     }
 
     public MovieManager(int limit) {
-        
-
+        this.limit = limit;
     }
 public void add (String movie) {
     String[] tmp = new String[movies.length + 1];
@@ -25,10 +25,10 @@ public String[] findAll() {
 
 public String[] findLast() {
     int resultsLength;
-    if (movies.length < 5) {
+    if (movies.length < limit) {
         resultsLength = movies.length;
     } else {
-        resultsLength = 5;
+        resultsLength = limit;
     }
     String[] tmp = new String [resultsLength];
     for (int i = 0; i < tmp.length; i++) {
